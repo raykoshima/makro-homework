@@ -6,11 +6,15 @@ const errorHandler = require("./middlewares/error");
 const notFoundHandler = require("./middlewares/notfound");
 const createError = require("./utils/createError")
 
+const authRoute = require("./routers/auth-route")
+const productRoute = require("./routers/product-route")
+
 app.use(cors())
 app.use(express.json());
 
-const authRoute = require("./routers/auth-route")
+
 app.use("/auth",authRoute)
+app.use("/product", productRoute)
 
 
 //footer
